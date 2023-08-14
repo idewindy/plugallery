@@ -2,65 +2,7 @@
 hostname = xiaoshuo.wtzw.com
 [Script]
 
-http-response https://xiaoshuo.wtzw.com/api/v1/user/get-user-info script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/picCollage.js,requires-body=1,max-size=0
+http-response https://xiaoshuo.wtzw.com/api/v1/user/get-user-info script-path=https://raw.githubusercontent.com/idewindy/plugallery/main/qimaoads.js,requires-body=1,max-size=0
 
 
-{
-  "data": {
-    "nickname_review_status": "0",
-    "nickname": "七猫书友_112457519752",
-    "tourist_mode": "2",
-    "comment_forbidden_type": "0",
-    "comment_forbidden_message": "",
-    "type": "user",
-    "avatar_review_status": "0",
-    "id": "410204224",
-    "is_vip": "0",
-    "token": "eyJhbGciOiJSUzI1NiIsImNyaXQiOlsiaXNzIiwianRpIiwiaWF0IiwiZXhwIl0sImtpZCI6IjE1MzEyMDM3NjkiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2OTMzMTQzNzAsImlhdCI6MTY5MjAxODM3MCwiaXNzIjoiIiwianRpIjoiNDJhMWUyNTJiYWJhNzczMjBhNjk5NzQ3MzhiYzgwNjMiLCJ1c2VyIjp7InVpZCI6NDEwMjA0MjI0LCJuaWNrbmFtZSI6IuS4g-eMq-S5puWPi18xMTI0NTc1MTk3NTIiLCJpbWVpIjoiIiwidXVpZCI6IiIsImRldmljZUlkIjoiIiwicmVnVGltZSI6MTY2OTI5NjQ1NiwidmlwRXhwaXJlQXQiOjAsInNtX2lkIjoiMjAyMjExMjQwOTE1MDA4ZDEyMjgxOWFmMDEwYTI4YWJkNDJmYmRjZDI2ODFjNzAxMWJmZmQwY2Y2OTdmN2EiLCJudXQiOjE2NjkyOTY0ODksImlmdSI6MCwiaXNfcmJmIjowLCJhY3RfaWQiOjAsImJpbmRfYXQiOjAsInRpZCI6IkQyWDd6SHBiaThybDluZFB5WllIdXE3T2V5SlI1VVhFQm56eTl2SDdNY3J6RVg2ZCIsInRfbW9kZSI6Mn19.EhLwtX-FBLTj75jEuuD0yFDXhmsYdST1AZgEi8VTbx9EIBc74Sv-Zu2W9_4LX1eQdr02SSvVnZSYOUDgC5I7CqXhzHy1jH91hVq27hM6XddXw8ALXdvsPIOvGWsSqKNB6CmDvv9lr30vjAeUjTuWS2qCZsB33zsVkzmz7zhid-Q",
-    "gender": "1",
-    "apple_email": "",
-    "phone": "17682314231",
-    "wechat_name": "",
-    "is_author": "0",
-    "avatar": "https://cdn.wtzw.com/bookimg/free/images/app/1_0_0/portraits_default_photo_360x360.png",
-    "role": "0",
-    "is_bind_apple": "0",
-    "dark_launch": "1",
-    "is_sign_in": "0"
-  }
-}
 
-var body = $response.body;
-var obj = JSON.parse(body);
-
-obj.data.app_receipt = {
-      "verified_at": "2022-04-25T11:02:19+00:00",
-      "intro_offer_used_product_ids": ["com.cardinalblue.PicCollage.subscription.annual.promotion"],
-      "pending_renewal_info": {
-        "edges": [{
-          "node": {
-            "product_id": "com.cardinalblue.PicCollage.subscription.annual.promotion",
-            "auto_renew_status": true,
-            "expiration_intent": null
-          }
-        }]
-      },
-      "purchases": {
-        "edges": [{
-          "node": {
-            "product_id": "com.cardinalblue.PicCollage.subscription.annual.promotion",
-            "transaction_id": "190001274994143",
-            "purchased_at": "2022-04-25T11:02:14+00:00",
-            "expires_at": "2029-05-02T11:02:14+00:00",
-            "verified_at": "2022-04-25T11:02:19+00:00",
-            "canceled_at": null,
-            "is_trial_period": false,
-            "is_in_intro_offer_period": false
-          }
-        }]
-      },
-      "is_free_trial_eligible": false
-    }
-
-body = JSON.stringify(obj);
-$done({body});
